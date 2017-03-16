@@ -1,0 +1,40 @@
+
+#+TITLE: Haskell Workshop 2017
+#+AUTHOR: Ertugrul Söylemez
+#+EMAIL: esz@posteo.de
+#+LANGUAGE: de
+#+OPTIONS: ':t -:t tags:nil toc:nil todo:nil
+#+LATEX_HEADER_EXTRA: \usepackage[ngerman]{babel}
+
+
+* TODO Installation [1/2]
+** DONE GHC
+** TODO Editor
+
+
+* TODO Haskell [5/11]
+** DONE GHCi
+** DONE Standardtypen
+** DONE Funktionen
+** DONE Typklassen: Grundlagen
+** DONE Module: Grundlagen
+** TODO Typen [0/4]
+*** TODO Aufzählungstypen
+*** TODO Pattern-Matching
+*** TODO Felder
+*** TODO Records
+** TODO Currying
+** TODO IO
+** TODO Kompilieren mit GHC
+** TODO Typklassen
+** TODO Modulsystem
+
+
+* TODO Cabal und cabal-install [0/4]
+** TODO Einführung in Projekte
+** TODO Sandkasten
+** TODO Abhängigkeiten
+
+
+* Notizen
+Haskell-Downloads: https://www.haskell.org/downloads/

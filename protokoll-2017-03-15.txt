@@ -1,0 +1,455 @@
+GHCi, version 8.0.1: http://www.haskell.org/ghc/  :? for help
+Loaded GHCi configuration from /home/never/cfg/my/files/.ghci
+Prelude> 1 + 1
+2
+Prelude> 5
+5
+Prelude> 500
+500
+Prelude> 2^500
+3273390607896141870013189696827599152216642046043064789483291368096133796404674554883270092325904157150886684127560071009217256545885393053328527589376
+Prelude> 2 :: Int
+2
+Prelude> 3^10 :: Int
+59049
+Prelude> 3^100 :: Int
+-2984622845537545263
+Prelude> True
+True
+Prelude> False
+False
+Prelude> "Hällo"
+"H\228llo"
+Prelude> length "Hällo"
+5
+Prelude> :t "Hällo"
+"Hällo" :: [Char]
+Prelude> :t 3
+3 :: Num t => t
+Prelude> sin 3
+0.1411200080598672
+Prelude> replicate 4 'n''
+
+<interactive>:15:17: error:
+    lexical error in string/character literal at end of input
+Prelude> replicate 4 'n'
+"nnnn"
+Prelude> 1 + 1
+2
+Prelude> 3*(1 + 2)
+9
+Prelude> "abc" + "def"
+
+<interactive>:19:1: error:
+    • No instance for (Num [Char]) arising from a use of ‘+’
+    • In the expression: "abc" + "def"
+      In an equation for ‘it’: it = "abc" + "def"
+Prelude> 3^(3 - 2) 
+3
+Prelude> (+) 2 3
+5
+Prelude> 4 `replicate` 'n'
+"nnnn"
+Prelude> -- blah
+Prelude> {- blah -}
+Prelude> (^) 3 (3 - 2)
+3
+Prelude> (^) 3 ((-) 3 2)
+3
+Prelude> [3,5,7,9]
+[3,5,7,9]
+Prelude> ['a','b','c']
+"abc"
+Prelude> 'a'
+'a'
+Prelude> 3 + 3 :: Double
+6.0
+Prelude> 3 + 3 :: Rational
+6 % 1
+Prelude> 1/3 :: Rational
+1 % 3
+Prelude> [1..9]
+[1,2,3,4,5,6,7,8,9]
+Prelude> [1,3..9]
+[1,3,5,7,9]
+Prelude> map sin [1..9]
+[0.8414709848078965,0.9092974268256817,0.1411200080598672,-0.7568024953079282,-0.9589242746631385,-0.27941549819892586,0.6569865987187891,0.9893582466233818,0.4121184852417566]
+Prelude> (3 +) 5
+8
+Prelude> (3 /) 5
+0.6
+Prelude> (/ 3) 5
+1.6666666666666667
+Prelude> 3 / 5 :: Integer
+
+<interactive>:39:1: error:
+    • No instance for (Fractional Integer) arising from a use of ‘/’
+    • In the expression: 3 / 5 :: Integer
+      In an equation for ‘it’: it = 3 / 5 :: Integer
+Prelude> 3 `div` 5 :: Integer
+0
+Prelude> 5 `div` 3 :: Integer
+1
+Prelude> map (3 +) [1..9]
+[4,5,6,7,8,9,10,11,12]
+Prelude> map (/ 3) [1..9]
+[0.3333333333333333,0.6666666666666666,1.0,1.3333333333333333,1.6666666666666667,2.0,2.3333333333333335,2.6666666666666665,3.0]
+Prelude> map (/ 2) [1..9]
+[0.5,1.0,1.5,2.0,2.5,3.0,3.5,4.0,4.5]
+Prelude> map (subtract 2) [1..9]
+[-1,0,1,2,3,4,5,6,7]
+Prelude> (`div` 3) 10
+3
+Prelude> (`replicate` 'n') 10
+"nnnnnnnnnn"
+Prelude> map (`replicate` 'n') [1..9]
+["n","nn","nnn","nnnn","nnnnn","nnnnnn","nnnnnnn","nnnnnnnn","nnnnnnnnn"]
+Prelude> (\x -> x + 2) 5
+7
+Prelude> (\x->x+2)5
+7
+Prelude> map (\x -> 2*x + 5) [1..9]
+[7,9,11,13,15,17,19,21,23]
+Prelude> f = \x -> 2*x + 5
+Prelude> x = 3
+Prelude> map f [1..9]
+[7,9,11,13,15,17,19,21,23]
+Prelude> f x = 2*x + 5
+Prelude> (\x y -> x^2 + y^2) 3 5
+34
+Prelude> x +++ y = x^2 + y^2
+Prelude> 7 +++ 8
+113
+Prelude> (+++) x y = x^2 + y^2
+Prelude> 3 == 4
+False
+Prelude> 3 == 3
+True
+Prelude> True == True
+True
+Prelude> True == False
+False
+Prelude> "abc" == "abd"
+False
+Prelude> "abc" == "abc"
+True
+Prelude> map ("abc" ==) ["def", "abc", "xyz"]
+[False,True,False]
+Prelude> :t (3 :: Integer)
+(3 :: Integer) :: Integer
+Prelude> :t replicate 4 'n'
+replicate 4 'n' :: [Char]
+Prelude> :t replicate 1 'n'
+replicate 1 'n' :: [Char]
+Prelude> replicate 4 10
+[10,10,10,10]
+Prelude> :t replicate
+replicate :: Int -> a -> [a]
+Prelude> replicate 4 (+)
+
+<interactive>:72:1: error:
+    • No instance for (Show (a0 -> a0 -> a0))
+        arising from a use of ‘print’
+        (maybe you haven't applied a function to enough arguments?)
+    • In the first argument of ‘print’, namely ‘it’
+      In a stmt of an interactive GHCi command: print it
+Prelude> map (\f -> f 3) [sin, cos, tan]
+[0.1411200080598672,-0.9899924966004454,-0.1425465430742778]
+Prelude> map (\f -> f pi) [sin, cos, tan]
+[1.2246467991473532e-16,-1.0,-1.2246467991473532e-16]
+Prelude> cos pi == -1
+True
+Prelude> sin pi == 0
+False
+Prelude> 0 - sin pi
+-1.2246467991473532e-16
+Prelude> map (\b -> b pi) [sin, cos, tan]
+[1.2246467991473532e-16,-1.0,-1.2246467991473532e-16]
+Prelude> :t f
+f :: Num a => a -> a
+Prelude> x = 3
+Prelude> y = 4
+Prelude> x + y
+7
+Prelude> (\f -> f + 1) 2
+3
+Prelude> :t (==)
+(==) :: Eq a => a -> a -> Bool
+Prelude> :i Eq
+class Eq a where
+  (==) :: a -> a -> Bool
+  (/=) :: a -> a -> Bool
+  {-# MINIMAL (==) | (/=) #-}
+  	-- Defined in ‘GHC.Classes’
+instance (Eq a, Eq b) => Eq (Either a b)
+  -- Defined in ‘Data.Either’
+instance Eq a => Eq [a] -- Defined in ‘GHC.Classes’
+instance Eq Word -- Defined in ‘GHC.Classes’
+instance Eq Ordering -- Defined in ‘GHC.Classes’
+instance Eq Int -- Defined in ‘GHC.Classes’
+instance Eq Float -- Defined in ‘GHC.Classes’
+instance Eq Double -- Defined in ‘GHC.Classes’
+instance Eq Char -- Defined in ‘GHC.Classes’
+instance Eq Bool -- Defined in ‘GHC.Classes’
+instance (Eq a, Eq b, Eq c, Eq d, Eq e, Eq f, Eq g, Eq h, Eq i,
+          Eq j, Eq k, Eq l, Eq m, Eq n, Eq o) =>
+         Eq (a, b, c, d, e, f, g, h, i, j, k, l, m, n, o)
+  -- Defined in ‘GHC.Classes’
+instance (Eq a, Eq b, Eq c, Eq d, Eq e, Eq f, Eq g, Eq h, Eq i,
+          Eq j, Eq k, Eq l, Eq m, Eq n) =>
+         Eq (a, b, c, d, e, f, g, h, i, j, k, l, m, n)
+  -- Defined in ‘GHC.Classes’
+instance (Eq a, Eq b, Eq c, Eq d, Eq e, Eq f, Eq g, Eq h, Eq i,
+          Eq j, Eq k, Eq l, Eq m) =>
+         Eq (a, b, c, d, e, f, g, h, i, j, k, l, m)
+  -- Defined in ‘GHC.Classes’
+instance (Eq a, Eq b, Eq c, Eq d, Eq e, Eq f, Eq g, Eq h, Eq i,
+          Eq j, Eq k, Eq l) =>
+         Eq (a, b, c, d, e, f, g, h, i, j, k, l)
+  -- Defined in ‘GHC.Classes’
+instance (Eq a, Eq b, Eq c, Eq d, Eq e, Eq f, Eq g, Eq h, Eq i,
+          Eq j, Eq k) =>
+         Eq (a, b, c, d, e, f, g, h, i, j, k)
+  -- Defined in ‘GHC.Classes’
+instance (Eq a, Eq b, Eq c, Eq d, Eq e, Eq f, Eq g, Eq h, Eq i,
+          Eq j) =>
+         Eq (a, b, c, d, e, f, g, h, i, j)
+  -- Defined in ‘GHC.Classes’
+instance (Eq a, Eq b, Eq c, Eq d, Eq e, Eq f, Eq g, Eq h, Eq i) =>
+         Eq (a, b, c, d, e, f, g, h, i)
+  -- Defined in ‘GHC.Classes’
+instance (Eq a, Eq b, Eq c, Eq d, Eq e, Eq f, Eq g, Eq h) =>
+         Eq (a, b, c, d, e, f, g, h)
+  -- Defined in ‘GHC.Classes’
+instance (Eq a, Eq b, Eq c, Eq d, Eq e, Eq f, Eq g) =>
+         Eq (a, b, c, d, e, f, g)
+  -- Defined in ‘GHC.Classes’
+instance (Eq a, Eq b, Eq c, Eq d, Eq e, Eq f) =>
+         Eq (a, b, c, d, e, f)
+  -- Defined in ‘GHC.Classes’
+instance (Eq a, Eq b, Eq c, Eq d, Eq e) => Eq (a, b, c, d, e)
+  -- Defined in ‘GHC.Classes’
+instance (Eq a, Eq b, Eq c, Eq d) => Eq (a, b, c, d)
+  -- Defined in ‘GHC.Classes’
+instance (Eq a, Eq b, Eq c) => Eq (a, b, c)
+  -- Defined in ‘GHC.Classes’
+instance (Eq a, Eq b) => Eq (a, b) -- Defined in ‘GHC.Classes’
+instance Eq () -- Defined in ‘GHC.Classes’
+instance Eq Integer
+  -- Defined in ‘integer-gmp-1.0.0.1:GHC.Integer.Type’
+instance Eq a => Eq (Maybe a) -- Defined in ‘GHC.Base’
+Prelude> 3 /= 4
+True
+Prelude> :t (+)
+(+) :: Num a => a -> a -> a
+Prelude> :i Num
+class Num a where
+  (+) :: a -> a -> a
+  (-) :: a -> a -> a
+  (*) :: a -> a -> a
+  negate :: a -> a
+  abs :: a -> a
+  signum :: a -> a
+  fromInteger :: Integer -> a
+  {-# MINIMAL (+), (*), abs, signum, fromInteger, (negate | (-)) #-}
+  	-- Defined in ‘GHC.Num’
+instance Num Word -- Defined in ‘GHC.Num’
+instance Num Integer -- Defined in ‘GHC.Num’
+instance Num Int -- Defined in ‘GHC.Num’
+instance Num Float -- Defined in ‘GHC.Float’
+instance Num Double -- Defined in ‘GHC.Float’
+Prelude> "abc" + "def"
+
+<interactive>:89:1: error:
+    • No instance for (Num [Char]) arising from a use of ‘+’
+    • In the expression: "abc" + "def"
+      In an equation for ‘it’: it = "abc" + "def"
+Prelude> ()
+()
+Prelude> :t ()
+() :: ()
+Prelude> :i ()
+data () = () 	-- Defined in ‘GHC.Tuple’
+instance Bounded () -- Defined in ‘GHC.Enum’
+instance Enum () -- Defined in ‘GHC.Enum’
+instance Eq () -- Defined in ‘GHC.Classes’
+instance Ord () -- Defined in ‘GHC.Classes’
+instance Read () -- Defined in ‘GHC.Read’
+instance Show () -- Defined in ‘GHC.Show’
+instance Monoid () -- Defined in ‘GHC.Base’
+Prelude> () == ()
+True
+Prelude> () < ()
+False
+Prelude> :t (<)
+(<) :: Ord a => a -> a -> Bool
+Prelude> 3 < 4
+True
+Prelude> (3, 4)
+(3,4)
+Prelude> :t (3, 4)
+(3, 4) :: (Num t1, Num t) => (t, t1)
+Prelude> :t (3 :: Integer, 4 :: Double)
+(3 :: Integer, 4 :: Double) :: (Integer, Double)
+Prelude> (3,4,5,6,7,8,9)
+(3,4,5,6,7,8,9)
+Prelude> (3,4,5,6,7,8,9) == (4,5,6,7,8,9,10)
+False
+Prelude> (3,4,5,6,7,8,9) == (4,5,6,7,8,9)
+
+<interactive>:102:20: error:
+    • Couldn't match expected type ‘(Integer, Integer, Integer,
+                                     Integer, Integer, Integer, Integer)’
+                  with actual type ‘(Integer, Integer, Integer, Integer, Integer,
+                                     Integer)’
+    • In the second argument of ‘(==)’, namely ‘(4, 5, 6, 7, 8, 9)’
+      In the expression: (3, 4, 5, 6, 7, 8, 9) == (4, 5, 6, 7, 8, 9)
+      In an equation for ‘it’:
+          it = (3, 4, 5, 6, 7, 8, 9) == (4, 5, 6, 7, 8, 9)
+Prelude> :t (==)
+(==) :: Eq a => a -> a -> Bool
+Prelude> :i Eq
+class Eq a where
+  (==) :: a -> a -> Bool
+  (/=) :: a -> a -> Bool
+  {-# MINIMAL (==) | (/=) #-}
+  	-- Defined in ‘GHC.Classes’
+instance (Eq a, Eq b) => Eq (Either a b)
+  -- Defined in ‘Data.Either’
+instance Eq a => Eq [a] -- Defined in ‘GHC.Classes’
+instance Eq Word -- Defined in ‘GHC.Classes’
+instance Eq Ordering -- Defined in ‘GHC.Classes’
+instance Eq Int -- Defined in ‘GHC.Classes’
+instance Eq Float -- Defined in ‘GHC.Classes’
+instance Eq Double -- Defined in ‘GHC.Classes’
+instance Eq Char -- Defined in ‘GHC.Classes’
+instance Eq Bool -- Defined in ‘GHC.Classes’
+instance (Eq a, Eq b, Eq c, Eq d, Eq e, Eq f, Eq g, Eq h, Eq i,
+          Eq j, Eq k, Eq l, Eq m, Eq n, Eq o) =>
+         Eq (a, b, c, d, e, f, g, h, i, j, k, l, m, n, o)
+  -- Defined in ‘GHC.Classes’
+instance (Eq a, Eq b, Eq c, Eq d, Eq e, Eq f, Eq g, Eq h, Eq i,
+          Eq j, Eq k, Eq l, Eq m, Eq n) =>
+         Eq (a, b, c, d, e, f, g, h, i, j, k, l, m, n)
+  -- Defined in ‘GHC.Classes’
+instance (Eq a, Eq b, Eq c, Eq d, Eq e, Eq f, Eq g, Eq h, Eq i,
+          Eq j, Eq k, Eq l, Eq m) =>
+         Eq (a, b, c, d, e, f, g, h, i, j, k, l, m)
+  -- Defined in ‘GHC.Classes’
+instance (Eq a, Eq b, Eq c, Eq d, Eq e, Eq f, Eq g, Eq h, Eq i,
+          Eq j, Eq k, Eq l) =>
+         Eq (a, b, c, d, e, f, g, h, i, j, k, l)
+  -- Defined in ‘GHC.Classes’
+instance (Eq a, Eq b, Eq c, Eq d, Eq e, Eq f, Eq g, Eq h, Eq i,
+          Eq j, Eq k) =>
+         Eq (a, b, c, d, e, f, g, h, i, j, k)
+  -- Defined in ‘GHC.Classes’
+instance (Eq a, Eq b, Eq c, Eq d, Eq e, Eq f, Eq g, Eq h, Eq i,
+          Eq j) =>
+         Eq (a, b, c, d, e, f, g, h, i, j)
+  -- Defined in ‘GHC.Classes’
+instance (Eq a, Eq b, Eq c, Eq d, Eq e, Eq f, Eq g, Eq h, Eq i) =>
+         Eq (a, b, c, d, e, f, g, h, i)
+  -- Defined in ‘GHC.Classes’
+instance (Eq a, Eq b, Eq c, Eq d, Eq e, Eq f, Eq g, Eq h) =>
+         Eq (a, b, c, d, e, f, g, h)
+  -- Defined in ‘GHC.Classes’
+instance (Eq a, Eq b, Eq c, Eq d, Eq e, Eq f, Eq g) =>
+         Eq (a, b, c, d, e, f, g)
+  -- Defined in ‘GHC.Classes’
+instance (Eq a, Eq b, Eq c, Eq d, Eq e, Eq f) =>
+         Eq (a, b, c, d, e, f)
+  -- Defined in ‘GHC.Classes’
+instance (Eq a, Eq b, Eq c, Eq d, Eq e) => Eq (a, b, c, d, e)
+  -- Defined in ‘GHC.Classes’
+instance (Eq a, Eq b, Eq c, Eq d) => Eq (a, b, c, d)
+  -- Defined in ‘GHC.Classes’
+instance (Eq a, Eq b, Eq c) => Eq (a, b, c)
+  -- Defined in ‘GHC.Classes’
+instance (Eq a, Eq b) => Eq (a, b) -- Defined in ‘GHC.Classes’
+instance Eq () -- Defined in ‘GHC.Classes’
+instance Eq Integer
+  -- Defined in ‘integer-gmp-1.0.0.1:GHC.Integer.Type’
+instance Eq a => Eq (Maybe a) -- Defined in ‘GHC.Base’
+Prelude> :i 3
+
+<interactive>:1:1: error: parse error on input ‘3’
+Prelude> :i sin
+class Fractional a => Floating a where
+  ...
+  sin :: a -> a
+  ...
+  	-- Defined in ‘GHC.Float’
+Prelude> :i replicate
+replicate :: Int -> a -> [a] 	-- Defined in ‘GHC.List’
+Prelude> :cd ratespiel/
+Prelude> :load Main
+[1 of 1] Compiling Main             ( Main.hs, interpreted )
+Ok, modules loaded: Main.
+*Main> :r
+[1 of 1] Compiling Main             ( Main.hs, interpreted )
+Ok, modules loaded: Main.
+*Main> :main
+Hello world!
+*Main> :main
+Hello world!
+*Main> :r
+[1 of 1] Compiling Main             ( Main.hs, interpreted )
+
+Main.hs:13:17: error:
+    • Couldn't match type ‘IO String’ with ‘[Char]’
+      Expected type: String
+        Actual type: IO String
+    • In the first argument of ‘putStrLn’, namely ‘getLine’
+      In the expression: putStrLn getLine
+      In an equation for ‘main’: main = putStrLn getLine
+Failed, modules loaded: none.
+Prelude> :r
+[1 of 1] Compiling Main             ( Main.hs, interpreted )
+Ok, modules loaded: Main.
+*Main> :main
+blah
+blah
+*Main> "abc" ++ "def"
+"abcdef"
+*Main> :r
+[1 of 1] Compiling Main             ( Main.hs, interpreted )
+Ok, modules loaded: Main.
+*Main> :main
+blubb
+blah: blubb
+*Main> :r
+[1 of 1] Compiling Main             ( Main.hs, interpreted )
+
+Main.hs:25:26: error:
+    • Couldn't match expected type ‘() -> IO ()’
+                  with actual type ‘IO ()’
+    • Possible cause: ‘putStrLn’ is applied to too many arguments
+      In the second argument of ‘(>>=)’, namely ‘putStrLn "world!"’
+      In the expression: putStrLn "Hello" >>= putStrLn "world!"
+      In an equation for ‘main’:
+          main = putStrLn "Hello" >>= putStrLn "world!"
+Failed, modules loaded: none.
+Prelude> :R
+unknown command ':R'
+use :? for help.
+Prelude> :r
+[1 of 1] Compiling Main             ( Main.hs, interpreted )
+Ok, modules loaded: Main.
+*Main> :main
+Hello
+world!
+*Main> :r
+[1 of 1] Compiling Main             ( Main.hs, interpreted )
+Ok, modules loaded: Main.
+*Main> :main
+Hello
+
+world!
+*Main> :r
+[1 of 1] Compiling Main             ( Main.hs, interpreted )
+Ok, modules loaded: Main.
+*Main> :main
+Hello
+
+world!
