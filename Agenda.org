@@ -12,21 +12,22 @@
 ** TODO Editor
 
 
-* TODO Haskell [5/11]
+* TODO Haskell [8/11]
 ** DONE GHCi
 ** DONE Standardtypen
 ** DONE Funktionen
 ** DONE Typklassen: Grundlagen
 ** DONE Module: Grundlagen
-** TODO Typen [0/4]
-*** TODO Aufzählungstypen
-*** TODO Pattern-Matching
-*** TODO Felder
+** TODO Typen [3/5]
+*** DONE Aufzählungstypen
+*** DONE Pattern-Matching
+*** TODO Guards
+*** DONE Felder
 *** TODO Records
-** TODO Currying
-** TODO IO
+** DONE Currying
+** DONE IO
 ** TODO Kompilieren mit GHC
-** TODO Typklassen
+** DONE Typklassen
 ** TODO Modulsystem
 
 
