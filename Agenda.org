@@ -7,35 +7,59 @@
 #+LATEX_HEADER_EXTRA: \usepackage[ngerman]{babel}
 
 
-* TODO Installation [1/2]
+* DONE Installation [2/2]
 ** DONE GHC
-** TODO Editor
+** DONE Editor
 
 
-* TODO Haskell [8/11]
+* TODO Haskell [10/11]
 ** DONE GHCi
 ** DONE Standardtypen
 ** DONE Funktionen
 ** DONE Typklassen: Grundlagen
 ** DONE Module: Grundlagen
-** TODO Typen [3/5]
+** DONE Typen [5/5]
 *** DONE Aufzählungstypen
 *** DONE Pattern-Matching
-*** TODO Guards
+*** DONE Guards
 *** DONE Felder
-*** TODO Records
+*** DONE Records
 ** DONE Currying
 ** DONE IO
-** TODO Kompilieren mit GHC
+** DONE Kompilieren mit GHC
 ** DONE Typklassen
 ** TODO Modulsystem
 
 
-* TODO Cabal und cabal-install [0/4]
-** TODO Einführung in Projekte
-** TODO Sandkasten
-** TODO Abhängigkeiten
+* DONE Cabal und cabal-install [3/3]
+** DONE Einführung in Projekte
+** DONE Sandkasten
+** DONE Abhängigkeiten
 
 
 * Notizen
-Haskell-Downloads: https://www.haskell.org/downloads/
+** Haskell-Downloads
+
+https://www.haskell.org/downloads/
+
+** Pandoc (Dokumenten-Konvertierungs-Tool)
+
+https://hackage.haskell.org/package/pandoc
+
+** Package-Bookmarks
+
+https://hackage.haskell.org/package/%s
+Keyword-Bookmark: p
+Adresszeile: p pandoc
+
+** Projekt initialisieren
+
+Zuerst:
+
+    cabal update
+
+Dann im Projekt-Verzeichnis:
+
+    cabal init
+    cabal sandbox init
+    cabal install --only-dependencies
