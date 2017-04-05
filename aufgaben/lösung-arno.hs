@@ -15,14 +15,20 @@ mysqrt :: Int -> Maybe Int
 mysqrt x = sqt 1 x
 
 sqt :: Int -> Int -> Maybe Int
-sqt n x     | n ^ 2  ==   x       = Just n
-            | n ^ 2  <    x       = sqt (n+1) x
-            | otherwise           = Nothing
+sqt n x     | n2  ==   x       = Just n
+            | n2  <    x       = sqt (n+1) x
+            | otherwise        = Nothing
+    where
+    n2 = n^2
 
 mysqrt' :: Integer -> Kannsein Integer
-mysqrt' x = sqt' 1 x
+mysqrt' x = sqt' 0 x
 
 sqt' :: Integer -> Integer -> Kannsein Integer
-sqt' n x     | n ^ 2  ==   x      = Einfach n
-             | n ^ 2  <    x      = sqt' (n+1) x
-             | otherwise          = Nichts
+sqt' n x =
+    case compare (n^2) x of
+      EQ -> Einfach n
+      GT -> Nichts
+      LT -> sqt' (n + 1) x
+
+    -- case = pattern matching
